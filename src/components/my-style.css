@@ -1,0 +1,245 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-style: 100%;
+  line-height: 1;
+  font-style: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-style: inherit;
+  font-weight: 400;
+}
+
+:root {
+  --background-header: #040405;
+  --some: #3A314C;
+  --background-main: #111111;
+  --buttons: #BE85FE;
+  --text-task: #fff;
+}
+
+
+.header {
+  height: 80px;
+  background-color: var(--background-header);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px 40px;
+}
+
+.header-logo a {
+  display: flex;
+  align-items: center;
+  color: var(--text-task);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 32px;
+}
+
+.header-logo img {
+  max-width: 50px;
+  margin-right: 20px;
+}
+
+.main-container {
+  background-color: var(--background-main);
+  flex-grow: 1;
+  padding: 40px;
+}
+
+.container-input {
+  min-height: 400px;
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.field-task {
+  width: 40%;
+  padding: 20px;
+  padding-left: 0;
+  color: var(--text-task);
+}
+
+.field-task__text {
+  margin-bottom: 50px;
+  word-break: break-word;
+}
+
+.field-task__example {
+  background-color: var(--some);
+  padding: 15px 20px;
+  border-radius: 15px;
+}
+
+.field-task__text h3,
+.field-task__example h3 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.field-task__text p,
+.field-task__example p {
+  font-size: 20px;
+}
+
+
+.field-code {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-container,
+.btn-container {
+  text-align: right;
+}
+
+.btn-container button {
+  background-color: var(--buttons);
+  color: var(--text-task);
+  padding: 8px 30px;
+  font-weight: 600;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.editor-container {
+  margin-bottom: 10px;
+}
+
+
+.dropdown-container {
+  align-self: flex-end;
+  position: relative;
+  width: 150px;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid var(--some);
+  border-radius: 4px;
+  background-color: var(--some);
+  color: var(--text-task);
+  appearance: none;
+  cursor: pointer;
+}
+
+.dropdown-container::after {
+  content: '▼';
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--text-task);
+}
+
+select:hover,
+select:focus {
+  border-color: #fff;
+  outline: none;
+}
+
+
+@media (max-width: 767px) {
+
+  .main-container {
+    padding: 15px;
+  }
+
+  .container-input {
+    flex-direction: column;
+  }
+
+  .field-task,
+  .field-code {
+    width: 100%;
+  }
+
+
+
+  .field-task {
+    margin-bottom: 30px;
+  }
+}
