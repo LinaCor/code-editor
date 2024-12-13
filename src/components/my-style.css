@@ -134,6 +134,7 @@ h6 {
   width: 40%;
   padding: 20px;
   padding-left: 0;
+  padding-bottom: 0;
   color: var(--text-task);
 }
 
@@ -182,7 +183,9 @@ h6 {
 }
 
 .editor-container {
+  min-height: 300px;
   margin-bottom: 10px;
+  flex-grow: 1;
 }
 
 
@@ -223,9 +226,11 @@ select:focus {
 .field-otput {
   background-color: var(--some);
   min-height: 300px;
+  width: 100%;
   padding: 20px;
   border-radius: 20px;
   color: #fff;
+  resize: none;
 }
 
 ::-webkit-scrollbar {
@@ -247,6 +252,10 @@ select:focus {
 
 @media (max-width: 767px) {
 
+  .header {
+    padding: 10px;
+  }
+
   .main-container {
     padding: 15px;
   }
@@ -260,9 +269,9 @@ select:focus {
     width: 100%;
   }
 
-
-
   .field-task {
     margin-bottom: 30px;
+    padding-right: 0;
+    padding-top: 50px;
   }
 }

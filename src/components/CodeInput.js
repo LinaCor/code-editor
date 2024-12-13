@@ -36,7 +36,7 @@ export function CodeInput() {
       </div>
       <CodeMirror
         value={value}
-        height="300px"
+        height="100%"
         extensions={[currentLanguage({ jsx: true })]}
         onChange={onChange}
         theme={vscodeDark}
