@@ -126,9 +126,8 @@ h6 {
 }
 
 .container-input {
-  min-height: 400px;
   display: flex;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .field-task {
@@ -220,6 +219,30 @@ select:focus {
   border-color: #fff;
   outline: none;
 }
+
+.field-otput {
+  background-color: var(--some);
+  min-height: 300px;
+  padding: 20px;
+  border-radius: 20px;
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: var(--buttons);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--some);
+}
+
 
 
 @media (max-width: 767px) {

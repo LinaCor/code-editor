@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 const tasks = [
   {
     text: 'Получаете массив чисел, возвращаете сумму всех положительных единиц.', example: '[1, -4, 7, 12] => 1+ 7+12=20'
@@ -14,6 +16,16 @@ const tasks = [
 ]
 
 export function Tasks() {
+  const [task, setTask] = useState({})
+
+  const randomizer = () => {
+    return Math.floor(Math.random() * 4);
+  }
+
+  useEffect(() => {
+    setTask(tasks[randomizer()])
+  }, []);
+
   return (
     <div className="field-task">
       <div className="field-task__text">
@@ -21,7 +33,7 @@ export function Tasks() {
           Задача:
         </h3>
         <p>
-          {tasks[0].text}
+          {task.text}
         </p>
       </div>
       <div className="field-task__example">
@@ -29,7 +41,7 @@ export function Tasks() {
           Пример:
         </h3>
         <p>
-          {tasks[0].example}
+          {task.example}
         </p>
       </div>
     </div>

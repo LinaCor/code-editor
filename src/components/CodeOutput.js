@@ -3,8 +3,8 @@ import './my-style.css';
 
 export function CodeOutput() {
   return (
-    <>
-      console тут
-    </>
+    <div className="field-otput">
+      какой то код
+    </div>
   )
 }

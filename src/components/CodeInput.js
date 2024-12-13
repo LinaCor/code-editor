@@ -1,31 +1,43 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import CodeMirror from '@uiw/react-codemirror';
-import { javascript } from '@codemirror/lang-javascript';
-import { python } from '@codemirror/lang-python';
 import { vscodeDark } from '@uiw/codemirror-theme-vscode';
+import { saveLocalStorage, getLocalStorage } from '../local-storage';
 import './my-style.css';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { selectValue } from '../store/store';
 
 
 export function CodeInput() {
-  const [value, setValue] = useState("console.log('hello world!');");
+  const currentLanguage = useSelector(state => state);
+  const dispatch = useDispatch();
+
+  const [value, setValue] = useState('');
+
+  useEffect(() => {
+    setValue(getLocalStorage());
+  }, [])
 
   const onChange = useCallback((val, viewUpdate) => {
     setValue(val);
+    saveLocalStorage(val);
   }, []);
+
+  const handleLang = (evt) => {
+    dispatch(selectValue(evt.target.value));
+  };
 
   return (
     <div className="field-code">
       <div className="dropdown-container">
-        <select>
-          <option defaultValue='JavaScript'>JavaScript</option>
+        <select onChange={handleLang}>
+          <option>JavaScript</option>
           <option>Python</option>
         </select>
       </div>
       <CodeMirror
         value={value}
-        height="400px"
-        extensions={[javascript({ jsx: true })]}
+        height="300px"
+        extensions={[currentLanguage({ jsx: true })]}
         onChange={onChange}
         theme={vscodeDark}
         className="editor-container"
