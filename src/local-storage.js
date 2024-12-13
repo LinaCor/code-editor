@@ -3,14 +3,14 @@ export function getLocalStorage() {
     const savedCode = localStorage.getItem('my-code');
 
     if (savedCode === null) {
-      return "console.log('hello world!');";
+      return "console.log('hello world!') //print('hello world!')";
     }
 
     return JSON.parse(savedCode);
   } catch (error) {
     return undefined;
   }
-}
+};
 
 export function saveLocalStorage(value) {
   try {
@@ -19,4 +19,4 @@ export function saveLocalStorage(value) {
   } catch (error) {
     console.log(error)
   }
-}
+};

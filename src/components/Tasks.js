@@ -13,17 +13,17 @@ const tasks = [
   {
     text: 'Нам нужна функция, которая может преобразовать строку в число. Какие способы достижения этого вы знаете?Примечание: не волнуйтесь, все входные данные будут строками, и каждая строка является совершенно допустимым представлением целого числа.', example: '"1234" --> 1234'
   }
-]
+];
 
 export function Tasks() {
-  const [task, setTask] = useState({})
+  const [task, setTask] = useState({});
 
   const randomizer = () => {
     return Math.floor(Math.random() * 4);
   }
 
   useEffect(() => {
-    setTask(tasks[randomizer()])
+    setTask(tasks[randomizer()]);
   }, []);
 
   return (
@@ -46,4 +46,4 @@ export function Tasks() {
       </div>
     </div>
   )
-}
+};

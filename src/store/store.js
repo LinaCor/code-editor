@@ -15,9 +15,8 @@ const language = (state = javascript, action) => {
 }
 
 export const selectValue = (value) => {
-  console.log(value)
   return ({
-    type: value
+    type: value,
   });
 };
 

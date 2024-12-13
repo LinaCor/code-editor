@@ -5,17 +5,23 @@ import { saveLocalStorage, getLocalStorage } from '../local-storage';
 import './my-style.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectValue } from '../store/store';
+import { checkCode } from '../api';
 
-
-export function CodeInput() {
+export function CodeInput({ setResponseApi }) {
   const currentLanguage = useSelector(state => state);
   const dispatch = useDispatch();
 
   const [value, setValue] = useState('');
+  const [language, setLanguage] = useState('JavaScript');
+
+  const getResponse = async (value, lang) => {
+    const result = await checkCode(value, lang);
+    setResponseApi(result);
+  };
 
   useEffect(() => {
     setValue(getLocalStorage());
-  }, [])
+  }, []);
 
   const onChange = useCallback((val, viewUpdate) => {
     setValue(val);
@@ -24,6 +30,7 @@ export function CodeInput() {
 
   const handleLang = (evt) => {
     dispatch(selectValue(evt.target.value));
+    setLanguage(evt.target.value);
   };
 
   return (
@@ -43,8 +50,8 @@ export function CodeInput() {
         className="editor-container"
       />
       <div className="btn-container">
-        <button>RUN!</button>
+        <button onClick={() => getResponse(value, language)}>RUN!</button>
       </div>
     </div>
   )
-}
+};
