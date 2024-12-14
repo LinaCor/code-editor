@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/code-editor/static/css/main.e5ee0f39.css",
+    "main.css": "/code-editor/static/css/main.0bd65b4a.css",
     "main.js": "/code-editor/static/js/main.011647e9.js",
     "static/media/console-svgrepo-com.svg": "/code-editor/static/media/console-svgrepo-com.2d877b704101cbf158f060013ac50e9f.svg",
     "index.html": "/code-editor/index.html",
-    "main.e5ee0f39.css.map": "/code-editor/static/css/main.e5ee0f39.css.map",
+    "main.0bd65b4a.css.map": "/code-editor/static/css/main.0bd65b4a.css.map",
     "main.011647e9.js.map": "/code-editor/static/js/main.011647e9.js.map"
   },
   "entrypoints": [
-    "static/css/main.e5ee0f39.css",
+    "static/css/main.0bd65b4a.css",
     "static/js/main.011647e9.js"
   ]
 }
