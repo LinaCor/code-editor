@@ -6,7 +6,7 @@ export function Header() {
   return (
     <header className="header">
       <div className="header-logo">
-        <a href='/'><img src={logo} alt="logo" /><span>CODE REDACTOR</span></a>
+        <a href='https://linacor.github.io/code-editor/'><img src={logo} alt="logo" /><span>CODE REDACTOR</span></a>
       </div>
     </header>
   )
