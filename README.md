@@ -9,10 +9,12 @@
 # Запуск
 Для запуска проекта на локальном устройстве должна быть установлена последняя версия Node.js
 После скачивания, в терминале VSCode ввести команды:
-```npm install
-npm start или  npm run start
 ```
-<!-- Приложение запустится на http://localhost:3000 (или другом порту). --> 
+npm install
+npm start или  npm run start
+#Приложение запустится на http://localhost:3000 (или другом порту). 
+```
+
 
 # Улучшения
 - добавлено сохранение введенного кода в localStorage
@@ -20,7 +22,8 @@ npm start или  npm run start
 
 # Расширения
 - создание объекта для сопоставления с языками в store.js, в случае добавления большего варианта ЯП
-```const languages = {
+```
+const languages = {
   JavaScript: javascript,
   Python: python,
 };
